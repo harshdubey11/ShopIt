@@ -1,5 +1,6 @@
 import React from 'react'
-import { Login } from '../features/Auth/Login'
+import Login from '../features/Auth/Login'
+
 
 function LoginPage() {
   return (
