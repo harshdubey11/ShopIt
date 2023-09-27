@@ -1,40 +1,40 @@
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, ShoppingCartIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { Link } from 'react-router-dom'
+import { Fragment } from "react";
+import { Disclosure, Menu, Transition } from "@headlessui/react";
+import {
+  Bars3Icon,
+  ShoppingCartIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectCartItems } from "../cart/CartSlice";
 
 const user = {
-
-
-  name: 'Tom Cook',
-  email: 'tom@example.com',
+  name: "Tom Cook",
+  email: "tom@example.com",
   imageUrl:
-    'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-}
+    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+};
 const navigation = [
-
-
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
-  { name: 'Reports', href: '#', current: false },
-]
+  { name: "Dashboard", href: "#", current: true },
+  { name: "Team", href: "#", current: false },
+  { name: "Projects", href: "#", current: false },
+  { name: "Calendar", href: "#", current: false },
+  { name: "Reports", href: "#", current: false },
+];
 const userNavigation = [
-
-
-  { name: 'Your Profile', href: '#' },
-  { name: 'Settings', href: '#' },
-  { name: 'Sign out', href: '#' },
-]
+  { name: "Profile", link: "/profile" },
+  { name: "My Orders", link: "/orders" },
+  { name: "Sign out", link: "/logout" },
+];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
-function Navbar({Children}) {
+function Navbar({ Children }) {
+  const items = useSelector(selectCartItems);
   return (
     <>
-     
       <div className="min-h-full">
         <Disclosure as="nav" className="bg-gray-800">
           {({ open }) => (
@@ -42,14 +42,14 @@ function Navbar({Children}) {
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
                   <div className="flex items-center">
-                  <Link to="/">
-                    <div className="flex-shrink-0">
-                      <img
-                        className="h-6 w-21"
-                        src="Logo.png"
-                        alt="Your Company"
-                      />
-                    </div>
+                    <Link to="/">
+                      <div className="flex-shrink-0">
+                        <img
+                          className="h-6 w-21"
+                          src="Logo.png"
+                          alt="Your Company"
+                        />
+                      </div>
                     </Link>
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
@@ -59,11 +59,11 @@ function Navbar({Children}) {
                             href={item.href}
                             className={classNames(
                               item.current
-                                ? 'bg-gray-900 text-white'
-                                : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                              'rounded-md px-3 py-2 text-sm font-medium'
+                                ? "bg-gray-900 text-white"
+                                : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                              "rounded-md px-3 py-2 text-sm font-medium"
                             )}
-                            aria-current={item.current ? 'page' : undefined}
+                            aria-current={item.current ? "page" : undefined}
                           >
                             {item.name}
                           </a>
@@ -73,19 +73,22 @@ function Navbar({Children}) {
                   </div>
                   <div className="hidden md:block">
                     <div className="ml-4 flex items-center md:ml-6">
-                    <Link to="/cart">
-                      <button
-                        type="button"
-                        className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                      >
-                        <span className="absolute -inset-1.5" />
-                        <span className="sr-only">View notifications</span>
-                        <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
-                      </button>
+                      <Link to="/cart">
+                        <button
+                          type="button"
+                          className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                        >
+                          <span className="absolute -inset-1.5" />
+                          <span className="sr-only">View notifications</span>
+                          <ShoppingCartIcon
+                            className="h-6 w-6"
+                            aria-hidden="true"
+                          />
+                        </button>
                       </Link>
-            <span className="inline-flex items-center mb-7 -ml-2 rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
-        3
-      </span>
+                      <span className="inline-flex items-center mb-7 -ml-2 rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
+                        {items.length > 0 ? items.length : ""}
+                      </span>
 
                       {/* Profile dropdown */}
                       <Menu as="div" className="relative ml-3">
@@ -93,7 +96,11 @@ function Navbar({Children}) {
                           <Menu.Button className="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                             <span className="absolute -inset-1.5" />
                             <span className="sr-only">Open user menu</span>
-                            <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" />
+                            <img
+                              className="h-8 w-8 rounded-full"
+                              src={user.imageUrl}
+                              alt=""
+                            />
                           </Menu.Button>
                         </div>
                         <Transition
@@ -109,15 +116,15 @@ function Navbar({Children}) {
                             {userNavigation.map((item) => (
                               <Menu.Item key={item.name}>
                                 {({ active }) => (
-                                  <a
-                                    href={item.href}
+                                  <Link
+                                    to={item.link}
                                     className={classNames(
-                                      active ? 'bg-gray-100' : '',
-                                      'block px-4 py-2 text-sm text-gray-700'
+                                      active ? "bg-gray-100" : "",
+                                      "block px-4 py-2 text-sm text-gray-700"
                                     )}
                                   >
                                     {item.name}
-                                  </a>
+                                  </Link>
                                 )}
                               </Menu.Item>
                             ))}
@@ -132,9 +139,15 @@ function Navbar({Children}) {
                       <span className="absolute -inset-0.5" />
                       <span className="sr-only">Open main menu</span>
                       {open ? (
-                        <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                        <XMarkIcon
+                          className="block h-6 w-6"
+                          aria-hidden="true"
+                        />
                       ) : (
-                        <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                        <Bars3Icon
+                          className="block h-6 w-6"
+                          aria-hidden="true"
+                        />
                       )}
                     </Disclosure.Button>
                   </div>
@@ -149,10 +162,12 @@ function Navbar({Children}) {
                       as="a"
                       href={item.href}
                       className={classNames(
-                        item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                        'block rounded-md px-3 py-2 text-base font-medium'
+                        item.current
+                          ? "bg-gray-900 text-white"
+                          : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                        "block rounded-md px-3 py-2 text-base font-medium"
                       )}
-                      aria-current={item.current ? 'page' : undefined}
+                      aria-current={item.current ? "page" : undefined}
                     >
                       {item.name}
                     </Disclosure.Button>
@@ -161,32 +176,43 @@ function Navbar({Children}) {
                 <div className="border-t border-gray-700 pb-3 pt-4">
                   <div className="flex items-center px-5">
                     <div className="flex-shrink-0">
-                      <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
+                      <img
+                        className="h-10 w-10 rounded-full"
+                        src={user.imageUrl}
+                        alt=""
+                      />
                     </div>
                     <div className="ml-3">
-                      <div className="text-base font-medium leading-none text-white">{user.name}</div>
-                      <div className="text-sm font-medium leading-none text-gray-400">{user.email}</div>
+                      <div className="text-base font-medium leading-none text-white">
+                        {user.name}
+                      </div>
+                      <div className="text-sm font-medium leading-none text-gray-400">
+                        {user.email}
+                      </div>
                     </div>
                     <Link to="/cart">
-                    <button
-                      type="button"
-                      className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                    >
-                      <span className="absolute -inset-1.5" />
-                      <span className="sr-only">View notifications</span>
-                      <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
-                    </button>
+                      <button
+                        type="button"
+                        className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                      >
+                        <span className="absolute -inset-1.5" />
+                        <span className="sr-only">View notifications</span>
+                        <ShoppingCartIcon
+                          className="h-6 w-6"
+                          aria-hidden="true"
+                        />
+                      </button>
                     </Link>
                     <span className="inline-flex items-center mb-5 -ml-1 rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
-        3
-      </span>
+                      {items.length > 0 ? items.length : ""}
+                    </span>
                   </div>
                   <div className="mt-3 space-y-1 px-2">
                     {userNavigation.map((item) => (
                       <Disclosure.Button
                         key={item.name}
-                        as="a"
-                        href={item.href}
+                        as="Link"
+                        to={item.link}
                         className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
                       >
                         {item.name}
@@ -205,11 +231,13 @@ function Navbar({Children}) {
           </div>
         </header> */}
         <main>
-          <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">{<Children/>}</div>
+          <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+            {<Children />}
+          </div>
         </main>
       </div>
     </>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

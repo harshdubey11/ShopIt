@@ -1,10 +1,9 @@
 import React from 'react'
 import ProductDetails from '../features/product-list/Components/ProductDetails'
-
+import Navbar from '../features/Navbar/Navbar'
 function ProductDetailPage() {
   return (
-    <div><ProductDetails/></div>
-  )
+   <ProductDetails/>)
 }
 
 export default ProductDetailPage

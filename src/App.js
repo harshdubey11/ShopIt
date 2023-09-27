@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "./logo.svg";
 import { Counter } from "./features/counter/Counter";
 import "./App.css";
@@ -15,6 +15,17 @@ import Checkoutpage from "./pages/Checkoutpage";
 import ProductDetails from "./features/product-list/Components/ProductDetails";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import Protected from "./features/Auth/Protected";
+import { useDispatch, useSelector } from "react-redux";
+import { selectLoggedInUser } from "./features/Auth/AuthSlice";
+import { fetchItemsByIdAsync } from "./features/cart/CartSlice";
+import PageNotFound from "./pages/404Page";
+import OrderSuccess from "./pages/OrderSuccessPage";
+import UserOrders from "./features/user/components/UserOrders";
+import UserOrdersPage from "./pages/UserOrdersPage";
+import UserProfilePage from "./pages/UserProfilePage";
+import { fetchLoggedInUserAsync } from "./features/user/userSlice";
+import Logout from "./features/Auth/Logout";
+import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 
 const router = createBrowserRouter([
   {
@@ -57,9 +68,51 @@ const router = createBrowserRouter([
       </Protected>
     ),
   },
+  {
+    path: "/order-success/:id",
+    element: <OrderSuccess />,
+  },
+  {
+    path: "/orders",
+    element: <UserOrdersPage />,
+  },
+  {
+    path: "/profile",
+    element: (
+      <Protected>
+        <UserProfilePage />
+      </Protected>
+    ),
+  },
+  {
+    path: "/logout",
+    element: (
+      <Logout/>
+    ),
+  },
+  {
+    path: "/forgot-password",
+    element: (
+      <ForgotPasswordPage/>
+    ),
+  },
+  {
+    path: "*",
+    element: <PageNotFound />,
+  },
 ]);
 
 function App() {
+  const user = useSelector(selectLoggedInUser);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (user) {
+      dispatch(fetchItemsByIdAsync(user.id));
+      dispatch(fetchLoggedInUserAsync(user.id));
+    }
+  }, [dispatch, user]);
+
   return (
     <div className="App">
       <RouterProvider router={router} />

@@ -2338,11 +2338,137 @@
     {
       "email": "harsh@gmail.com",
       "password": "H@rsh011",
+      "addresses": [],
+      "id": 1
+    }
+  ],
+  "cart": [],
+  "orders": [
+    {
+      "items": [
+        {
+          "title": "Microsoft Surface Laptop 4",
+          "description": "Style and speed. Stand out on HD video calls backed by Studio Mics. Capture ideas on the vibrant touchscreen.",
+          "price": 1499,
+          "discountPercentage": 10.23,
+          "rating": 4.43,
+          "stock": 68,
+          "brand": "Microsoft Surface",
+          "category": "laptops",
+          "thumbnail": "https://i.dummyjson.com/data/products/8/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/8/1.jpg",
+            "https://i.dummyjson.com/data/products/8/2.jpg",
+            "https://i.dummyjson.com/data/products/8/3.jpg",
+            "https://i.dummyjson.com/data/products/8/4.jpg",
+            "https://i.dummyjson.com/data/products/8/thumbnail.jpg"
+          ],
+          "quantity": 3,
+          "user": 1,
+          "id": 1
+        }
+      ],
+      "user": {
+        "email": "harsh@gmail.com",
+        "password": "H@rsh011",
+        "addresses": [
+          {
+            "name": "Harsh Dubey",
+            "email": "harsh.110901@gmail.com",
+            "phone": "9517229130",
+            "street": "C-28 , Pragati Vihar , Kalyanpur , Lucknow",
+            "city": "Lucknow",
+            "state": "UP",
+            "pinCode": "226022"
+          },
+          {
+            "name": "Harsh Dubey",
+            "email": "harsh.110901@gmail.com",
+            "phone": "411141444144",
+            "street": "C-28 , Pragati Vihar , Kalyanpur , Lucknow",
+            "city": "Lucknow",
+            "state": "UP",
+            "pinCode": "226023"
+          }
+        ],
+        "id": 1
+      },
+      "totalAmount": 4497,
+      "totalItems": 3,
+      "selectedAddress": {
+        "name": "Harsh Dubey",
+        "email": "harsh.110901@gmail.com",
+        "phone": "9517229130",
+        "street": "C-28 , Pragati Vihar , Kalyanpur , Lucknow",
+        "city": "Lucknow",
+        "state": "UP",
+        "pinCode": "226022"
+      },
+      "paymentMethod": "card",
+      "status": "pending",
       "id": 1
     },
     {
-      "email": "demouser@gmail.com",
-      "password": "H@rsh011",
+      "items": [
+        {
+          "title": "iPhone X",
+          "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+          "price": 899,
+          "discountPercentage": 17.94,
+          "rating": 4.44,
+          "stock": 34,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/2/1.jpg",
+            "https://i.dummyjson.com/data/products/2/2.jpg",
+            "https://i.dummyjson.com/data/products/2/3.jpg",
+            "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 1
+        }
+      ],
+      "user": {
+        "email": "harsh@gmail.com",
+        "password": "H@rsh011",
+        "addresses": [
+          {
+            "name": "Harsh Dubey",
+            "email": "harsh.110901@gmail.com",
+            "phone": "9517229130",
+            "street": "C-28 , Pragati Vihar , Kalyanpur , Lucknow",
+            "city": "Lucknow",
+            "state": "UP",
+            "pinCode": "226022"
+          },
+          {
+            "name": "Harsh Dubey",
+            "email": "harsh.110901@gmail.com",
+            "phone": "411141444144",
+            "street": "C-28 , Pragati Vihar , Kalyanpur , Lucknow",
+            "city": "Lucknow",
+            "state": "UP",
+            "pinCode": "226023"
+          }
+        ],
+        "id": 1
+      },
+      "totalAmount": 899,
+      "totalItems": 1,
+      "selectedAddress": {
+        "name": "Harsh Dubey",
+        "email": "harsh.110901@gmail.com",
+        "phone": "411141444144",
+        "street": "C-28 , Pragati Vihar , Kalyanpur , Lucknow",
+        "city": "Lucknow",
+        "state": "UP",
+        "pinCode": "226023"
+      },
+      "paymentMethod": "card",
+      "status": "pending",
       "id": 2
     }
   ]
