@@ -3,11 +3,11 @@ import { useState } from "react";
 import { StarIcon } from "@heroicons/react/20/solid";
 import { RadioGroup } from "@headlessui/react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProductByIdAsync, selectProductById } from "../ProductListSlice";
+import { fetchProductByIdAsync, selectProductById } from "../product-list/ProductListSlice";
 import { useParams } from "react-router-dom";
-import { selectLoggedInUser } from "../../Auth/AuthSlice";
-import { addToCartAsync, selectCartItems } from "../../cart/CartSlice";
-import { discountedPrice } from "../../../app/constants";
+import { selectLoggedInUser } from "../Auth/AuthSlice";
+import { addToCartAsync } from "../cart/CartSlice";
+import { discountedPrice } from "../../app/constants";
 
 const colors = [
   { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
@@ -38,12 +38,11 @@ function classNames(...classes) {
 
 // TODO : Loading UI
 
-export default function ProductDetails() {
+export default function AdminProductDetails() {
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [selectedSize, setSelectedSize] = useState(sizes[2]);
   const product = useSelector(selectProductById);
   const user = useSelector(selectLoggedInUser);
-  const cartItems = useSelector(selectCartItems);
   const dispatch = useDispatch();
   const params = useParams();
 
@@ -53,15 +52,9 @@ export default function ProductDetails() {
 
   const handleClick = (e) => {
     e.preventDefault();
-    if(cartItems.findIndex(item=>item.productId===product.id)<0){
-      const newItem ={ ...product,productId:product.id, quantity: 1, user: user.id };
-      delete newItem['id'];
-      dispatch(addToCartAsync(newItem));
-    }
-    else{
-      console.log("item already added")
-    }
-   
+    const newItem ={ ...product, quantity: 1, user: user.id };
+    delete newItem['id'];
+    dispatch(addToCartAsync(newItem));
     //removing Id otherwise json server cant create new id in cart data , it will use product id which clashes.
   };
 
@@ -157,9 +150,10 @@ export default function ProductDetails() {
               <p className="text-3xl line-through tracking-tight text-gray-900">
                 ${product.price}
               </p>
-              <p className="text-3xl  tracking-tight text-gray-900">
+              <p className="text-3xl tracking-tight text-gray-900">
                 ${discountedPrice(product)}
               </p>
+
               {/* Reviews */}
               <div className="mt-6">
                 <h3 className="sr-only">Reviews</h3>

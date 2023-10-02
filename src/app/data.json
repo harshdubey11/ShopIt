@@ -35,13 +35,14 @@
         "https://i.dummyjson.com/data/products/2/2.jpg",
         "https://i.dummyjson.com/data/products/2/3.jpg",
         "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
-      ]
+      ],
+      "deleted": true
     },
     {
       "id": 3,
       "title": "Samsung Universe 9",
       "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
-      "price": 1249,
+      "price": 2222,
       "discountPercentage": 15.46,
       "rating": 4.09,
       "stock": 36,
@@ -49,7 +50,10 @@
       "category": "smartphones",
       "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
       "images": [
-        "https://i.dummyjson.com/data/products/3/1.jpg"
+        "https://i.dummyjson.com/data/products/3/1.jpg",
+        "--",
+        "--",
+        "https://i.dummyjson.com/data/products/3/thumbnail.jpg"
       ]
     },
     {
@@ -92,7 +96,7 @@
       "id": 6,
       "title": "MacBook Pro",
       "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
-      "price": 1749,
+      "price": 8000,
       "discountPercentage": 11.02,
       "rating": 4.57,
       "stock": 83,
@@ -103,7 +107,7 @@
         "https://i.dummyjson.com/data/products/6/1.png",
         "https://i.dummyjson.com/data/products/6/2.jpg",
         "https://i.dummyjson.com/data/products/6/3.png",
-        "https://i.dummyjson.com/data/products/6/4.jpg"
+        "https://i.dummyjson.com/data/products/6/thumbnail.png"
       ]
     },
     {
@@ -1838,6 +1842,24 @@
         "https://i.dummyjson.com/data/products/100/3.jpg",
         "https://i.dummyjson.com/data/products/100/thumbnail.jpg"
       ]
+    },
+    {
+      "title": "Asus TUF F15",
+      "description": "Asus ka mast laptop",
+      "brand": "Apple",
+      "category": "laptops",
+      "price": 123,
+      "discountPercentage": 33,
+      "stock": 2,
+      "thumbnail": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fdlcdnwebimgs.asus.com%2Fgain%2F95427e5d-1c1d-441f-8998-0ca491f21b54%2Fw800&tbnid=zjdmEfBNVYwM5M&vet=12ahUKEwjx4Kz-js2BAxXNs2MGHbH2D_4QMygCegUIARDMAQ..i&imgrefurl=https%3A%2F%2Fwww.asus.com%2Flaptops%2Ffor-gaming%2Ftuf-gaming%2Fasus-tuf-dash-f15-2022%2F&docid=rt9OOsTPr_eK3M&w=800&h=800&q=tuf%20f15&ved=2ahUKEwjx4Kz-js2BAxXNs2MGHbH2D_4QMygCegUIARDMAQ",
+      "images": [
+        "https://www.google.com/imgres?imgurl=https%3A%2F%2Fdlcdnwebimgs.asus.com%2Fgain%2F95427e5d-1c1d-441f-8998-0ca491f21b54%2Fw800&tbnid=zjdmEfBNVYwM5M&vet=12ahUKEwjx4Kz-js2BAxXNs2MGHbH2D_4QMygCegUIARDMAQ..i&imgrefurl=https%3A%2F%2Fwww.asus.com%2Flaptops%2Ffor-gaming%2Ftuf-gaming%2Fasus-tuf-dash-f15-2022%2F&docid=rt9OOsTPr_eK3M&w=800&h=800&q=tuf%20f15&ved=2ahUKEwjx4Kz-js2BAxXNs2MGHbH2D_4QMygCegUIARDMAQ",
+        "https://www.google.com/imgres?imgurl=https%3A%2F%2Fdlcdnwebimgs.asus.com%2Fgain%2F95427e5d-1c1d-441f-8998-0ca491f21b54%2Fw800&tbnid=zjdmEfBNVYwM5M&vet=12ahUKEwjx4Kz-js2BAxXNs2MGHbH2D_4QMygCegUIARDMAQ..i&imgrefurl=https%3A%2F%2Fwww.asus.com%2Flaptops%2Ffor-gaming%2Ftuf-gaming%2Fasus-tuf-dash-f15-2022%2F&docid=rt9OOsTPr_eK3M&w=800&h=800&q=tuf%20f15&ved=2ahUKEwjx4Kz-js2BAxXNs2MGHbH2D_4QMygCegUIARDMAQ",
+        "https://www.google.com/imgres?imgurl=https%3A%2F%2Fdlcdnwebimgs.asus.com%2Fgain%2F95427e5d-1c1d-441f-8998-0ca491f21b54%2Fw800&tbnid=zjdmEfBNVYwM5M&vet=12ahUKEwjx4Kz-js2BAxXNs2MGHbH2D_4QMygCegUIARDMAQ..i&imgrefurl=https%3A%2F%2Fwww.asus.com%2Flaptops%2Ffor-gaming%2Ftuf-gaming%2Fasus-tuf-dash-f15-2022%2F&docid=rt9OOsTPr_eK3M&w=800&h=800&q=tuf%20f15&ved=2ahUKEwjx4Kz-js2BAxXNs2MGHbH2D_4QMygCegUIARDMAQ",
+        "https://www.google.com/imgres?imgurl=https%3A%2F%2Fdlcdnwebimgs.asus.com%2Fgain%2F95427e5d-1c1d-441f-8998-0ca491f21b54%2Fw800&tbnid=zjdmEfBNVYwM5M&vet=12ahUKEwjx4Kz-js2BAxXNs2MGHbH2D_4QMygCegUIARDMAQ..i&imgrefurl=https%3A%2F%2Fwww.asus.com%2Flaptops%2Ffor-gaming%2Ftuf-gaming%2Fasus-tuf-dash-f15-2022%2F&docid=rt9OOsTPr_eK3M&w=800&h=800&q=tuf%20f15&ved=2ahUKEwjx4Kz-js2BAxXNs2MGHbH2D_4QMygCegUIARDMAQ"
+      ],
+      "rating": 0,
+      "id": 101
     }
   ],
   "brands": [
@@ -2338,138 +2360,50 @@
     {
       "email": "harsh@gmail.com",
       "password": "H@rsh011",
-      "addresses": [],
-      "id": 1
-    }
-  ],
-  "cart": [],
-  "orders": [
-    {
-      "items": [
+      "addresses": [
         {
-          "title": "Microsoft Surface Laptop 4",
-          "description": "Style and speed. Stand out on HD video calls backed by Studio Mics. Capture ideas on the vibrant touchscreen.",
-          "price": 1499,
-          "discountPercentage": 10.23,
-          "rating": 4.43,
-          "stock": 68,
-          "brand": "Microsoft Surface",
-          "category": "laptops",
-          "thumbnail": "https://i.dummyjson.com/data/products/8/thumbnail.jpg",
-          "images": [
-            "https://i.dummyjson.com/data/products/8/1.jpg",
-            "https://i.dummyjson.com/data/products/8/2.jpg",
-            "https://i.dummyjson.com/data/products/8/3.jpg",
-            "https://i.dummyjson.com/data/products/8/4.jpg",
-            "https://i.dummyjson.com/data/products/8/thumbnail.jpg"
-          ],
-          "quantity": 3,
-          "user": 1,
-          "id": 1
+          "name": "Harsh Dubey",
+          "email": "harsh.110901@gmail.com",
+          "phone": "9517229130",
+          "street": "C-28 , Pragati Vihar , Kalyanpur , Lucknow",
+          "city": "Lucknow",
+          "state": "UP",
+          "pinCode": "226022"
         }
       ],
-      "user": {
-        "email": "harsh@gmail.com",
-        "password": "H@rsh011",
-        "addresses": [
-          {
-            "name": "Harsh Dubey",
-            "email": "harsh.110901@gmail.com",
-            "phone": "9517229130",
-            "street": "C-28 , Pragati Vihar , Kalyanpur , Lucknow",
-            "city": "Lucknow",
-            "state": "UP",
-            "pinCode": "226022"
-          },
-          {
-            "name": "Harsh Dubey",
-            "email": "harsh.110901@gmail.com",
-            "phone": "411141444144",
-            "street": "C-28 , Pragati Vihar , Kalyanpur , Lucknow",
-            "city": "Lucknow",
-            "state": "UP",
-            "pinCode": "226023"
-          }
-        ],
-        "id": 1
-      },
-      "totalAmount": 4497,
-      "totalItems": 3,
-      "selectedAddress": {
-        "name": "Harsh Dubey",
-        "email": "harsh.110901@gmail.com",
-        "phone": "9517229130",
-        "street": "C-28 , Pragati Vihar , Kalyanpur , Lucknow",
-        "city": "Lucknow",
-        "state": "UP",
-        "pinCode": "226022"
-      },
-      "paymentMethod": "card",
-      "status": "pending",
+      "role": "user",
       "id": 1
     },
     {
-      "items": [
-        {
-          "title": "iPhone X",
-          "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
-          "price": 899,
-          "discountPercentage": 17.94,
-          "rating": 4.44,
-          "stock": 34,
-          "brand": "Apple",
-          "category": "smartphones",
-          "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
-          "images": [
-            "https://i.dummyjson.com/data/products/2/1.jpg",
-            "https://i.dummyjson.com/data/products/2/2.jpg",
-            "https://i.dummyjson.com/data/products/2/3.jpg",
-            "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
-          ],
-          "quantity": 1,
-          "user": 1,
-          "id": 1
-        }
-      ],
-      "user": {
-        "email": "harsh@gmail.com",
-        "password": "H@rsh011",
-        "addresses": [
-          {
-            "name": "Harsh Dubey",
-            "email": "harsh.110901@gmail.com",
-            "phone": "9517229130",
-            "street": "C-28 , Pragati Vihar , Kalyanpur , Lucknow",
-            "city": "Lucknow",
-            "state": "UP",
-            "pinCode": "226022"
-          },
-          {
-            "name": "Harsh Dubey",
-            "email": "harsh.110901@gmail.com",
-            "phone": "411141444144",
-            "street": "C-28 , Pragati Vihar , Kalyanpur , Lucknow",
-            "city": "Lucknow",
-            "state": "UP",
-            "pinCode": "226023"
-          }
-        ],
-        "id": 1
-      },
-      "totalAmount": 899,
-      "totalItems": 1,
-      "selectedAddress": {
-        "name": "Harsh Dubey",
-        "email": "harsh.110901@gmail.com",
-        "phone": "411141444144",
-        "street": "C-28 , Pragati Vihar , Kalyanpur , Lucknow",
-        "city": "Lucknow",
-        "state": "UP",
-        "pinCode": "226023"
-      },
-      "paymentMethod": "card",
-      "status": "pending",
+      "email": "shopadmin@gmail.com",
+      "password": "H@rsh011",
+      "addresses": [],
+      "role": "admin",
       "id": 2
     }
-  ]
+  ],
+  "cart": [
+    {
+      "title": "Samsung Universe 9",
+      "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+      "price": 2222,
+      "discountPercentage": 15.46,
+      "rating": 4.09,
+      "stock": 36,
+      "brand": "Samsung",
+      "category": "smartphones",
+      "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/3/1.jpg",
+        "--",
+        "--",
+        "https://i.dummyjson.com/data/products/3/thumbnail.jpg"
+      ],
+      "productId": 3,
+      "quantity": 1,
+      "user": 1,
+      "id": 1
+    }
+  ],
+  "orders": []
 }
