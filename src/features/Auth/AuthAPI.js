@@ -1,7 +1,7 @@
 export function createUser(userData) {
   return new Promise(async (resolve) => {
     //TODO: we will not hard-code server URL here
-    const response = await fetch("http://localhost:8080/users", {
+    const response = await fetch("http://localhost:8080/auth/signup", {
       method: "POST",
       body: JSON.stringify(userData),
       headers: { "content-type": "application/json" },
@@ -21,22 +21,24 @@ export function LogoutUser(userId) {
 
 export function checkUser(loginInfo) {
   return new Promise(async (resolve, reject) => {
-    const email = loginInfo.email;
-    const password = loginInfo.password;
-    const response = await fetch("http://localhost:8080/users?email=" + email);
-
-    const data = await response.json();
-    console.log(data);
-    if (data.length) {
-      if (password === data[0].password) {
-        resolve({ data: data[0] });
+    try {
+      const response = await fetch("http://localhost:8080/auth/login", {
+        method: "POST",
+        body: JSON.stringify(loginInfo),
+        headers: { "content-type": "application/json" },
+      });
+      if (response.ok) {
+        const data = await response.json();
+        resolve({ data });
       } else {
-        reject({ message: "User not Found" });
+        const error = await response.json();
+        reject(error);
       }
-    } else {
-      reject({ message: "User not Found" });
+    } catch (error) {
+      reject(error);
     }
-    resolve({ data });
+
+    // TODO: on server it will only return some info of user (not password)
   });
 }
 

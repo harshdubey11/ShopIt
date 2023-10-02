@@ -53,15 +53,17 @@ export default function ProductDetails() {
 
   const handleClick = (e) => {
     e.preventDefault();
-    if(cartItems.findIndex(item=>item.productId===product.id)<0){
-      const newItem ={ ...product,productId:product.id, quantity: 1, user: user.id };
-      delete newItem['id'];
+    if (cartItems.findIndex((item) => item.product.id === product.id) < 0) {
+      const newItem = {
+        product: product.id,
+        quantity: 1,
+        user: user.id,
+      };
       dispatch(addToCartAsync(newItem));
+    } else {
+      console.log("item already added");
     }
-    else{
-      console.log("item already added")
-    }
-   
+
     //removing Id otherwise json server cant create new id in cart data , it will use product id which clashes.
   };
 
@@ -308,7 +310,9 @@ export default function ProductDetails() {
 
                 <button
                   type="submit"
-                  onClick={(e)=>{handleClick(e)}}
+                  onClick={(e) => {
+                    handleClick(e);
+                  }}
                   className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                 >
                   Add to Cart
