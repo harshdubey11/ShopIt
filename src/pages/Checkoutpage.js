@@ -41,7 +41,7 @@ function Checkout() {
   const handleOrder = (e) => {
     const order = {
       items,
-      user,
+      user:user.id,
       totalAmount,
       totalItems,
       selectedAddress,

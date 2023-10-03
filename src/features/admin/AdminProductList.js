@@ -92,7 +92,7 @@ export default function AdminProductList() {
 
   useEffect(() => {
     const pagination = { _page: page, _limit: ITEMS_PER_PAGE };
-    dispatch(fetchProductsByFiltersAsync({ filter, sort, pagination }));
+    dispatch(fetchProductsByFiltersAsync({ filter, sort, pagination , admin:true}));
   }, [dispatch, filter, sort, page]);
 
   useEffect(() => {
@@ -517,7 +517,12 @@ function ProductGrid({ products }) {
                   </div>
                   {product.deleted && (
                     <div>
-                      <p className="text-sm text-red-400">product deleted</p>
+                      <p className="text-sm text-red-400">Product deleted</p>
+                    </div>
+                  )}
+                  {!product.stock && (
+                    <div>
+                      <p className="text-sm text-red-400">Out of Stock</p>
                     </div>
                   )}
                 </div>

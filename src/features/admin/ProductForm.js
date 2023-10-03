@@ -95,7 +95,10 @@ function ProductForm() {
           <h2 className="text-base font-semibold leading-7 text-gray-900">
             Add Product
           </h2>
-
+        {selectedProduct && selectedProduct.deleted && <h2 className="text-base font-bold leading-7 text-red-900">
+            This product has been deleted !
+          </h2>
+        }
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div className="sm:col-span-6">
               <label
